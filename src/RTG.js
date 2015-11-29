@@ -27,6 +27,28 @@ Triangle.prototype = {
 	},
 	perimeter : function() {
 		return this.a + this.b + this.c;
+	},
+	points : function (options) {
+		var interval = (typeof options === 'undefined') ? { x: [0,10], y: [0,10]} : options.interval;
+		var p1 = {
+			x: RNG.random(interval.x),
+			y: RNG.random(interval.y)
+		};
+		var alpha = RNG.random([0, 2*Math.PI]);
+		var p2 = {
+			x: p1.x + this.a * Math.cos(alpha),
+			y: p1.y + this.a * Math.sin(alpha),
+		};
+		var beta = Math.acos((this.a*this.a + this.c*this.c - this.b*this.b)/(2*this.a*this.c)) + alpha;
+		var p3 = {
+			x: p1.x + this.c * Math.cos(beta),
+			y: p1.y + this.c * Math.sin(beta),
+		};
+		return {
+			p1: p1,
+			p2: p2,
+			p3: p3
+		};
 	}
 };
 

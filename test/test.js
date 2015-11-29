@@ -59,3 +59,17 @@ QUnit.test('Triangle aléatoire avec aire constante', function (assert) {
   var t = rtg._area(s);
   assert.close(t.area(), s);
 });
+
+QUnit.test('Génération de points pour un triangle', function (assert) {
+  var t = rtg._scalene();
+  var points = t.points();
+  var p1 = points.p1,
+      p2 = points.p2,
+      p3 = points.p3;
+  var a = Math.sqrt((p2.x-p1.x)*(p2.x-p1.x) + (p2.y-p1.y)*(p2.y-p1.y));
+  var b = Math.sqrt((p2.x-p3.x)*(p2.x-p3.x) + (p2.y-p3.y)*(p2.y-p3.y));
+  var c = Math.sqrt((p3.x-p1.x)*(p3.x-p1.x) + (p3.y-p1.y)*(p3.y-p1.y));
+  assert.close(a, t.a, [a, t.a].join(' == ') + ' ?');
+  assert.close(b, t.b, [b, t.b].join(' == ') + ' ?');
+  assert.close(c, t.c, [c, t.c].join(' == ') + ' ?');
+});
