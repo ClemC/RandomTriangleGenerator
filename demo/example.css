@@ -1,5 +1,18 @@
 .triangle {
-	fill:blue;
-	stroke:black;
-	stroke-width:1
+	fill:rgb(91, 192, 222);
+	stroke: white;
+	stroke-width:2
+}
+
+.drawing {
+	height: 500px;
+	width: 100%;
+}
+
+button {
+	width: 100%;
+}
+
+.speedInfo {
+	float: right;
 }
