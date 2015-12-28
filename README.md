@@ -9,9 +9,9 @@ A JavaScript library to generate random triangles with geometrical restrictions 
 - equilateral
 
 
-## Demos
+## Demo
 
-Coming soon
+[Random triangle generator app &rarr;](http://clemc.github.io/RandomTriangleGenerator/demo/)
 
 ## Basic Usage
 
