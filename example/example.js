@@ -1,12 +1,25 @@
+var animationLoopCondition = false;
+var animationSpeed = [500, 100, 0];
+var fpsSpeed = [animationSpeed[0], animationSpeed[1], 5];
+var speedLevel = 0;
+var countTriangle = 0;
+var startTime;
+var endTime;
+
 $(document).ready(function(){
-	var myRtg = new RTG();
-	myRtg._interval = [0,100];
+	var jId = $('#drawing');
+	
 	var size = {
-		x:500,
-		y:500
+		x: jId.width(),
+		y: jId.height()
 	};
-	var animation = function (iterations, timeout) {
-		if (iterations !== 0) {
+	
+	var myRtg = new RTG();
+	myRtg._interval = [0, 0.8 * Math.min(size.x, size.y)];
+	
+	
+	var animation = function () {
+		if (animationLoopCondition) {
 			setTimeout(function(){
 				/*****/
 				var triangle = myRtg._scalene();
@@ -26,11 +39,35 @@ $(document).ready(function(){
 				].join(' ');
 				$('#triangle').attr('points', svgPoints);
 				/*****/
-				animation(iterations - 1, timeout)
-				console.log(iterations, $('#triangle'), svgPoints);
-			}, timeout);
+				countTriangle++;
+				if (countTriangle * fpsSpeed[speedLevel] % 1000 === 0) {
+					endTime = new Date().getTime();
+					$('#speedInfo').html((1000 * countTriangle / (endTime - startTime)).toFixed(2));
+					countTriangle = 0;
+					startTime = new Date().getTime();
+				}
+				/*****/
+				animation();
+			}, animationSpeed[speedLevel]);
 		}
 	}
 	
-	animation(10,100);
+	$('#start').click(function(){
+		animationLoopCondition = !animationLoopCondition;
+		if (animationLoopCondition) {
+			startTime = new Date().getTime();
+			animation(-1, animationSpeed);
+			$('#start').html('<span class="glyphicon glyphicon-stop" aria-hidden="true"></span> Stop');
+		}
+		else {
+			$('#start').html('<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Start');
+		}
+	});
+	
+	$('#speed').click(function() {
+		speedLevel = (speedLevel + 1) % 3;
+		$('#speedLevel').html((speedLevel + 1).toString());
+	});
+	
 });
+
