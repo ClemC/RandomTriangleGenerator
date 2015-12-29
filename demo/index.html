@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Example RTG</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="../dist/RTG.js" type="text/javascript"></script>
@@ -12,16 +13,16 @@
 		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css">
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<span id="speedInfo" class="label label-primary speedInfo"></span>
+		<div class="container-fluid plain">
+			<div class="row part1">
+                <span id="speedInfo" class="label label-primary col-md-1 col-md-offset-11 col-sm-2 col-sm-offset-10 col-xs-6 col-xs-offset-6"></span>
 			</div>
-			<div class="row">
+			<div class="row part2">
 				<svg id="drawing" class="drawing">
 					<polygon id="triangle" points="" class="triangle" />
 				</svg>
 			</div>
-			<div class="row">
+			<div class="row part3">
 				<div class="col-md-2 col-md-offset-4 col-sm-6 col-xs-6">
 					<button id="speed" class="btn btn-outline btn-primary">
 						Speed <span id="speedLevel" class="badge">1</span>

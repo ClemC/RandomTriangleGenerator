@@ -42,7 +42,7 @@ $(document).ready(function(){
 				countTriangle++;
 				if (countTriangle * fpsSpeed[speedLevel] % 1000 === 0) {
 					endTime = new Date().getTime();
-					$('#speedInfo').html((1000 * countTriangle / (endTime - startTime)).toFixed(2));
+					$('#speedInfo').html((1000 * countTriangle / (endTime - startTime)).toFixed(2) + ' fps');
 					countTriangle = 0;
 					startTime = new Date().getTime();
 				}
