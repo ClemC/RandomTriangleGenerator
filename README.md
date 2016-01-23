@@ -1,5 +1,5 @@
 
-<img src="https://github.com/ClemC/RandomTriangleGenerator/image/RTG.js" alt="Random Triangle Generator" />
+<img src="https://raw.githubusercontent.com/ClemC/RandomTriangleGenerator/master/image/RTG.jpg" alt="Random Triangle Generator" />
 
 Random Triangle Generator - RTG.js
 ==========
