@@ -73,3 +73,10 @@ QUnit.test('Génération de points pour un triangle', function (assert) {
   assert.close(b, t.b, [b, t.b].join(' == ') + ' ?');
   assert.close(c, t.c, [c, t.c].join(' == ') + ' ?');
 });
+
+QUnit.test('Triangle scalène avec côtés entiers', function (assert) {
+  var t = rtg._integer();
+  assert.equal(Number.isInteger(t.a), true);
+  assert.equal(Number.isInteger(t.b), true);
+  assert.equal(Number.isInteger(t.c), true);
+});

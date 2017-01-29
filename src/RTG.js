@@ -96,6 +96,13 @@ RTG.prototype = {
 		var c = RNG.random([Math.abs(a-b), a+b]);
 		return new Triangle(a, b, c);
 	},
+
+	_integer : function () {
+		var a = Math.floor(RNG.random(this._interval));
+		var b = Math.floor(RNG.random(this._interval));
+		var c = Math.floor(RNG.random([Math.abs(a-b), a+b]));
+		return new Triangle(a, b, c);
+	},
 	
 	_isocele: function () {
 		var a = RNG.random(this._interval);

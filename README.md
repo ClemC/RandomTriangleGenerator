@@ -48,7 +48,7 @@ To build the dist files run:
 #### RTG(mode, options)
 
 Constructs a random triangle generator given a string `mode`:
-- the available modes are `area`, `perimeter`, `scalene`, `isosceles`, `equilateral` and `right` 
+- the available modes are `area`, `perimeter`, `scalene`, `isosceles`, `equilateral`, `right` and `integer`
 - `scalene` by default
 
 and an object with the following options:
