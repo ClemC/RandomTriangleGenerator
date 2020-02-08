@@ -19,7 +19,7 @@
     "uglify-js": ">=2.6.0"
   },
   "scripts": {
-    "test": "console.log('OK')",
+    "test": "",
     "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
   }
 }
