@@ -4,6 +4,8 @@
 Random Triangle Generator - RTG.js
 ==========
 
+[![Build Status](https://travis-ci.org/ClemC/RandomTriangleGenerator.svg?branch=master)](https://travis-ci.org/ClemC/RandomTriangleGenerator)
+
 A JavaScript library to generate random triangles with geometrical restrictions such as :
 - constant area
 - constant perimeter
