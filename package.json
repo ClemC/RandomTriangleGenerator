@@ -16,7 +16,7 @@
   },
   "main": "dist/RTG.js",
   "devDependencies": {
-    "uglify-js": "~2.4.15"
+    "uglify-js": ">=2.6.0"
   },
   "scripts": {
     "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
