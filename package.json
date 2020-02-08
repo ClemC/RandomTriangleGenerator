@@ -16,9 +16,11 @@
   },
   "main": "dist/RTG.js",
   "devDependencies": {
+    "eslint": ">=6.8.0",
     "uglify-js": ">=2.6.0"
   },
   "scripts": {
+    "test": "eslint src",
     "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
   }
 }
