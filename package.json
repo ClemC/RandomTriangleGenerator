@@ -16,10 +16,11 @@
   },
   "main": "dist/RTG.js",
   "devDependencies": {
+    "qunit": ">=2.9.3"
     "uglify-js": ">=2.6.0"
   },
   "scripts": {
-    "test": "",
+    "test": "qunit",
     "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
   }
 }
