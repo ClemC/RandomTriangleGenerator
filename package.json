@@ -20,7 +20,7 @@
     "uglify-js": ">=2.6.0"
   },
   "scripts": {
-    "test": "qunit",
+    "test": "qunit --help",
     "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
   }
 }
