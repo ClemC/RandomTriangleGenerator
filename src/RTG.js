@@ -14,6 +14,9 @@ var RNG = {
 	}
 };
 
+/*
+ * @class Triangle
+*/
 var Triangle = function (a, b, c) {
 	this.a = a;
 	this.b = b;
