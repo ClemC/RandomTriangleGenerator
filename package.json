@@ -1,5 +1,5 @@
 {
-  "name": "RandomTriangleGenerator",
+  "name": "random-triangle-generator",
   "version": "0.0.1",
   "description": "A triangle generator",
   "homepage": "https://github.com/ClemC/RandomTriangleGenerator",
@@ -16,11 +16,19 @@
   },
   "main": "dist/RTG.js",
   "devDependencies": {
-    "qunit": ">=2.9.3", 
-    "uglify-js": ">=2.6.0"
+    "mocha": ">=8.0.1",
+    "uglify-js-es6": ">=2.8.9",
+    "jsdoc": ">=3.6.4",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
   "scripts": {
-    "test": "qunit --help",
-    "prepublish": "uglifyjs src/RTG.js -c -o dist/RTG.js"
+    "prepare": "uglifyjs src/RTG.js src/Triangle.js -c -o dist/RTG.js && jsdoc src",
+    "test": ".\\node_modules\\.bin\\mocha --require babel-core/register"
   }
 }
